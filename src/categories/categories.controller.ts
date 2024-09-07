@@ -31,14 +31,14 @@ export class CategoriesController {
 
   @Patch(':id')
   update(
-    @Param('id') id: number,
+    @Param('id') id: string,
     @Body() updateData: Partial<Category>,
   ): Promise<Category> {
     return this.categoriesService.update(id, updateData);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: number): Promise<void> {
+  remove(@Param('id') id: string): Promise<void> {
     return this.categoriesService.remove(id);
   }
 }
