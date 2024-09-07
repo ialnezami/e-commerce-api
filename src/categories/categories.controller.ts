@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { CategoriesService } from './categories.service';
-import { Category } from './category.entity';
+import { Category } from './interface/category.interface';
 
 @Controller('categories')
 export class CategoriesController {
@@ -20,7 +20,7 @@ export class CategoriesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: number): Promise<Category> {
+  findOne(@Param('id') id: string): Promise<Category> {
     return this.categoriesService.findOne(id);
   }
 
