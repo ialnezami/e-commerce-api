@@ -1,20 +1,23 @@
 import { Controller, Post, Body } from '@nestjs/common';
-import { PaymentsService } from './payments.service';
+import { PaymentStrategy } from './payment-strategy.service';
 
 @Controller('payments')
 export class PaymentsController {
-  constructor(private readonly paymentsService: PaymentsService) {}
+  constructor(private readonly paymentStrategy: PaymentStrategy) {}
 
   @Post('create-payment-intent')
   async createPaymentIntent(
+    @Body('provider') provider: string,
     @Body('amount') amount: number,
     @Body('currency') currency: string,
   ) {
-    return this.paymentsService.createPaymentIntent(amount, currency);
+    const paymentProvider = this.paymentStrategy.getPaymentProvider(provider);
+    return paymentProvider.createPaymentIntent(amount, currency);
   }
 
   @Post('create-checkout-session')
   async createCheckoutSession(
+    @Body('provider') provider: string,
     @Body()
     products: Array<{
       name: string;
@@ -23,6 +26,7 @@ export class PaymentsController {
       quantity: number;
     }>,
   ) {
-    return this.paymentsService.createCheckoutSession(products);
+    const paymentProvider = this.paymentStrategy.getPaymentProvider(provider);
+    return paymentProvider.createCheckoutSession(products);
   }
 }
