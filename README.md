@@ -18,4 +18,4 @@ L'**E-commerce API** est une application backend développée avec [NestJS](http
 
 - [Node.js](https://nodejs.org/en/) (v14 ou supérieur)
 - [npm](https://www.npmjs.com/)
-- Base de données (PostgreSQL ou MongoDB)
+- Base de données ( MongoDB)
