@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 import { Document } from 'mongoose';
-import { Product } from './product'; // Associe le produit avec l'order si nécessaire
+import { Product } from '../../products/dto/product.dto'; // Associe le produit avec l'order si nécessaire
 
 @Schema({
   collection: 'orders',
