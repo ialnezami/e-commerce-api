@@ -7,9 +7,21 @@ import { CategoriesModule } from './categories/categories.module';
 import { OrdersModule } from './orders/orders.module';
 import { CartModule } from './cart/cart.module';
 import { PaymentsModule } from './payments/payments.module';
-
+import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule } from '@nestjs/config';
 @Module({
-  imports: [AuthModule, ProductsModule, CategoriesModule, OrdersModule, CartModule, PaymentsModule],
+  imports: [
+    MongooseModule.forRoot(process.env.URL_MONGODB, {
+      dbName: process.env.DB_NAME,
+    }),
+    ConfigModule.forRoot({}),
+    AuthModule,
+    ProductsModule,
+    CategoriesModule,
+    OrdersModule,
+    CartModule,
+    PaymentsModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
