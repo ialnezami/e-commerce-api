@@ -3,6 +3,7 @@ import { AuthService } from './auth.service';
 import { JwtModule } from '@nestjs/jwt';
 // import { JwtStrategy } from './jwt.strategy'; // Si tu utilises des stratégies
 import { PassportModule } from '@nestjs/passport';
+import { UsersService } from './user.service';
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import { PassportModule } from '@nestjs/passport';
       signOptions: { expiresIn: '60s' }, // Durée d'expiration du token
     }),
   ],
-  providers: [AuthService], // Inclure JwtStrategy si tu l'utilises JwtStrategy
+  providers: [AuthService, UsersService], // Inclure JwtStrategy si tu l'utilises JwtStrategy
   exports: [AuthService], // Si tu veux exporter AuthService pour d'autres modules
 })
 export class AuthModule {}
