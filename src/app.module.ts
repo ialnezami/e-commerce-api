@@ -11,6 +11,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { RedisModule } from './redis/redis.module';
 import { StoreModule } from './store/store.module';
+import { DeliveryModule } from './delivery/delivery.module';
 @Module({
   imports: [
     ConfigModule.forRoot({}),
@@ -25,6 +26,7 @@ import { StoreModule } from './store/store.module';
     CartModule,
     PaymentsModule,
     StoreModule,
+    DeliveryModule,
   ],
   controllers: [AppController],
   providers: [AppService],
