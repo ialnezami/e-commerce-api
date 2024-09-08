@@ -19,4 +19,12 @@ export class OrdersService {
     const newOrder = new this.orderModel(order);
     return newOrder.save();
   }
+
+  async updateOrderStatus(orderId: string, status: string): Promise<Order> {
+    return this.orderModel.findByIdAndUpdate(
+      orderId,
+      { status },
+      { new: true },
+    );
+  }
 }
