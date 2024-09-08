@@ -46,18 +46,18 @@ export class PaymentsController {
     }
 
     // Gérer les événements (exemple: payment capture, refund, etc.)
-    switch (webhookEvent.event_type) {
-      case 'CHECKOUT.ORDER.APPROVED':
-        console.log('Order approved:', webhookEvent);
-        // Logique pour gérer les commandes approuvées
-        break;
-      case 'PAYMENT.CAPTURE.COMPLETED':
-        console.log('Payment captured:', webhookEvent);
-        // Logique pour gérer les paiements capturés
-        break;
-      default:
-        console.log(`Unhandled event type: ${webhookEvent.event_type}`);
-    }
+    // switch (webhookEvent.event_type) {
+    //   case 'CHECKOUT.ORDER.APPROVED':
+    //     console.log('Order approved:', webhookEvent);
+    //     // Logique pour gérer les commandes approuvées
+    //     break;
+    //   case 'PAYMENT.CAPTURE.COMPLETED':
+    //     console.log('Payment captured:', webhookEvent);
+    //     // Logique pour gérer les paiements capturés
+    //     break;
+    //   default:
+    //     console.log(`Unhandled event type: ${webhookEvent.event_type}`);
+    // }
 
     return { status: 'success' };
   }
