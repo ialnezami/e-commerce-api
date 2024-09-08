@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
-import { Document } from 'mongoose';
+import { Document, Types } from 'mongoose';
+import { Store } from 'src/store/entities/store.entity';
 
 @Schema({
   collection: 'products',
@@ -48,6 +49,13 @@ export class Product {
   })
   @Prop({ required: true })
   categoryId: number;
+
+  @ApiProperty({
+    type: Store,
+    description: 'Store where the product is available',
+  })
+  @Prop({ required: true, type: Types.ObjectId, ref: 'Store' }) // Référence à Store
+  store: Store;
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);
