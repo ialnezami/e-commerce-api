@@ -19,3 +19,25 @@ L'**E-commerce API** est une application backend développée avec [NestJS](http
 - [Node.js](https://nodejs.org/en/) (v14 ou supérieur)
 - [npm](https://www.npmjs.com/)
 - Base de données ( MongoDB)
+
+Voici un aperçu de la structure du projet :
+
+    ```bash
+
+/project-root
+├── e-commerce-api
+│ ├── Dockerfile
+│ ├── .env
+│ ├── src
+│ ├── package.json
+│ └── ... # other NestJS files
+├── e-commerce-front
+│ ├── Dockerfile
+│ ├── src
+│ ├── package.json
+│ └── ... # other Angular/React files
+├── docker-compose.yml
+
+```
+
+```
