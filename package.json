@@ -30,6 +30,7 @@
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/swagger": "^7.4.0",
     "@paypal/checkout-server-sdk": "^1.0.3",
+    "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
     "mongoose": "^8.6.1",
     "passport": "^0.7.0",
