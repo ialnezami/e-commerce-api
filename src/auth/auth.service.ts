@@ -23,7 +23,4 @@ export class AuthService {
 
   // Implement registration and login logic here...
   async registration(data: any) {}
-
-  // login
-  async;
 }
