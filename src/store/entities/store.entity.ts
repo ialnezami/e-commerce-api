@@ -11,6 +11,16 @@ export class Store {
 
   @Prop({ required: true })
   address: string;
+  @Prop()
+  address2: string;
+  @Prop({ required: true })
+  city: string;
+
+  @Prop({ required: true })
+  postalCode: string;
+
+  @Prop({ required: true })
+  country: string;
 }
 
 export const StoreSchema = SchemaFactory.createForClass(Store);
