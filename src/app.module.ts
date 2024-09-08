@@ -12,6 +12,7 @@ import { ConfigModule } from '@nestjs/config';
 import { RedisModule } from './redis/redis.module';
 import { StoreModule } from './store/store.module';
 import { DeliveryModule } from './delivery/delivery.module';
+import { PdfDocmuentModule } from './pdf-docmuent/pdf-docmuent.module';
 @Module({
   imports: [
     ConfigModule.forRoot({}),
@@ -27,6 +28,7 @@ import { DeliveryModule } from './delivery/delivery.module';
     PaymentsModule,
     StoreModule,
     DeliveryModule,
+    PdfDocmuentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
