@@ -9,6 +9,7 @@ import { CartModule } from './cart/cart.module';
 import { PaymentsModule } from './payments/payments.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
+import { RedisModule } from './redis/redis.module';
 @Module({
   imports: [
     ConfigModule.forRoot({}),
@@ -19,6 +20,7 @@ import { ConfigModule } from '@nestjs/config';
     ProductsModule,
     CategoriesModule,
     OrdersModule,
+    RedisModule,
     CartModule,
     PaymentsModule,
   ],
