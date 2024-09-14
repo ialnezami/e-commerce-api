@@ -35,6 +35,15 @@ export class OrdersService {
     }
     return updatedOrder;
   }
+  async updateOrderStatus(id: string, status: string): Promise<Order> {
+    const updatedOrder = await this.orderModel
+      .findByIdAndUpdate(id, { status }, { new: true })
+      .exec();
+    if (!updatedOrder) {
+      throw new NotFoundException(`Order with ID ${id} not found`);
+    }
+    return updatedOrder;
+  }
 
   async delete(id: string): Promise<void> {
     const result = await this.orderModel.findByIdAndDelete(id).exec();
