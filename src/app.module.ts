@@ -10,9 +10,7 @@ import { PaymentsModule } from './payments/payments.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { RedisModule } from './redis/redis.module';
-import { StoreModule } from './store/store.module';
-import { DeliveryModule } from './delivery/delivery.module';
-import { PdfDocumentModule } from './pdf-document/pdf-document.module';
+import { UserModule } from './user/user.module';
 @Module({
   imports: [
     ConfigModule.forRoot({}),
@@ -26,9 +24,7 @@ import { PdfDocumentModule } from './pdf-document/pdf-document.module';
     RedisModule,
     CartModule,
     PaymentsModule,
-    StoreModule,
-    DeliveryModule,
-    PdfDocumentModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
