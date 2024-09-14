@@ -1,6 +1,6 @@
 import { Controller, Get, Param, Res } from '@nestjs/common';
 import { Response } from 'express';
-import { PdfDocumentService } from './pdf-docmuent.service';
+import { PdfDocumentService } from './pdf-document.service';
 import { OrdersService } from 'src/orders/orders.service';
 
 @Controller('pdf')

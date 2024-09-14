@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Order, OrderSchema } from 'src/orders/dto/order.dto';
-import { PdfDocumentService } from './pdf-docmuent.service';
-import { PdfDocumentController } from './pdf-docmuent.controller';
+import { PdfDocumentService } from './pdf-document.service';
+import { PdfDocumentController } from './pdf-document.controller';
 
 @Module({
   imports: [
